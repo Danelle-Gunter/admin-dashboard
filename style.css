@@ -11,7 +11,8 @@ body {
     color: #fff;
     height: 1vh;
     display: grid;
-    grid-template: 1fr 4fr / 1fr 3fr 1fr;
+    grid-template-columns: minmax(150px, 200px) 4fr;
+    grid-template-rows: 1fr 4fr;
 }
 
 ul {
@@ -20,10 +21,14 @@ ul {
 
 nav {
     background-color: var(--theme-color);
-    grid-area: 1 / 1 / -1 / 2;
-    padding: 10px; /*!!!*/
+    grid-row: 1 / -1;
+    grid-column: 1 / 2;
+    padding: 10px;
     display: grid;
     grid-template-rows: 50px repeat(2, 200px);
+    row-gap: 30px;
+    font-weight: bold;
+    line-height: 2rem;
 }
 
 header {
@@ -81,19 +86,30 @@ header {
     width: 80px;
 }
 
-section {
+main {
+    grid-column: 2 / -1;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
     padding: 15px;
     background-color: var(--accent-color);
-    grid-column: 2 / 3;
+}
+
+article>p,
+.card li p {
+    font-size: 14px;
+    color: #333;
+}
+
+section {
     color: #000;
     display: grid;
     grid-template-rows: 30px 1fr;
-    gap: 10px;
+    row-gap: 10px;
 }
 
 .section-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, 300px);
     gap: 15px;
 }
 
@@ -101,30 +117,30 @@ article {
     background-color: #fff;
     border-left: 3px solid rgb(255, 230, 0);
     border-radius: 5px;
-    height: 150px;
+    height: 200px;
     width: 300px;
     padding: 10px;
     display: grid;
     grid-template-rows: 1fr 3fr 1fr;
 }
 
-article>p,
-.card li {
-    font-size: 14px;
-}
 
 .card-links {
     display: grid;
     grid-template-columns: repeat(3, 20px);
+    justify-self: end;
 }
 
 aside {
     background-color: var(--accent-color);
-    grid-column: 3;
     color: #000;
     display: grid;
-    grid-template-rows: 1fr 1fr;
-    padding: 15px;
+    grid-template-rows: 30px 1fr 50px 300px;
+    padding-left: 20px;
+}
+
+h3 .title {
+    color: #000;
 }
 
 .card {
@@ -134,7 +150,24 @@ aside {
     padding: 20px;
 }
 
+.trending-title {
+    padding-top: 20px;
+}
+
+div .trending {
+    display: grid;
+    grid-template-rows: repeat(4, 100px); 
+}
+
+.trending-list {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
 hr {
     margin: 10px 0;
 }
+
 
