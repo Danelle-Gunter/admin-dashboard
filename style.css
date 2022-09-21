@@ -32,6 +32,15 @@ nav {
     line-height: 2rem;
 }
 
+nav h1 .material-symbols-outlined {
+    font-size: 20px;
+}
+
+nav ul .material-symbols-outlined {
+    font-size: 16px;
+    margin-right: 5px;
+}
+
 header {
     background-color: #fff;
     color: #000;
