@@ -8,12 +8,13 @@
 }
 
 body {
-    background-color: #000;
     color: #fff;
     height: 1vh;
     display: grid;
-    grid-template-columns: minmax(150px, 200px) 4fr;
+    grid-template-columns: minmax(180px, 200px) 4fr;
     grid-template-rows: 1fr 4fr;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 300;
 }
 
 ul {
@@ -30,15 +31,26 @@ nav {
     row-gap: 30px;
     font-weight: bold;
     line-height: 2rem;
+    font-size: 14px;
 }
 
-nav h1 .material-symbols-outlined {
-    font-size: 20px;
+nav h1,
+nav li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+nav h1 > .material-symbols-outlined {
+    font-size: 32px; 
+}
+
+nav li {
+    gap: 10px;
 }
 
 nav ul .material-symbols-outlined {
     font-size: 16px;
-    margin-right: 5px;
 }
 
 header {
@@ -70,15 +82,14 @@ header {
 .header-top input {
     background-color: var(--accent-color);
     border-radius: 10px;
-    width: 75%;
     border: none;
     height: 20px;
 }
 
 .header-top-nav-list {
-    display: grid;
-    grid-template-columns: 25% 1fr 1fr;
-    justify-items: end;
+    display: flex;
+    justify-content: right;
+    gap: 30px;
 }
 
 .header-top-nav-list > .material-symbols-outlined {
@@ -98,9 +109,9 @@ header {
     padding-top: 2px;
 }
 
-
 .header-top-nav-list > :nth-child(3) {
-    font-weight: bold;
+    font-weight: 600;
+    font-size: 14px;
     align-self: center;
 }
 
@@ -131,10 +142,9 @@ header {
 }
 
 .header-bottom-buttons {
-    display: grid;
-    grid-template-columns: repeat(3, 90px);
-    gap: 5px;
-    justify-items: end;
+    display: flex;
+    justify-content: right;
+    gap: 20px;
 }
 
 .header-bottom-buttons button {
@@ -156,8 +166,13 @@ main {
     background-color: var(--accent-color);
 }
 
+h2 {
+    font-size: 1.25rem;
+}
+
 article>p,
-.card li p {
+.card li p,
+.user-title {
     font-size: 14px;
     color: #333;
 }
@@ -177,37 +192,38 @@ section {
 
 article {
     background-color: #fff;
-    border-left: 3px solid rgb(255, 230, 0);
+    border-left: 5px solid var(--user-icon);
     border-radius: 5px;
-    height: 200px;
+    height: 180px;
     width: 300px;
     padding: 10px;
     display: grid;
     grid-template-rows: 1fr 3fr 1fr;
+    box-shadow: 5px 5px 5px #aaa;
 }
-
 
 .card-links {
-    display: grid;
-    grid-template-columns: repeat(3, 20px);
-    justify-self: end;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
 }
 
-.card-links > .material-symbols-outlined {
-    font-variation-settings: 'WGHT' 100;
-    font-variation-settings: 
+.card-links .material-symbols-outlined {
+    font-size: 18px;
 }
 
 aside {
     background-color: var(--accent-color);
     color: #000;
     display: grid;
-    grid-template-rows: 30px 1fr 50px 300px;
+    grid-template-rows: 30px 1fr 50px 1fr;
     padding-left: 20px;
 }
 
 h3 .title {
     color: #000;
+    font-size: 0.75rem;
 }
 
 .card {
@@ -215,22 +231,45 @@ h3 .title {
     border-radius: 5px;
     margin-top: 10px;
     padding: 20px;
+    box-shadow: 5px 5px 5px #aaa;
 }
 
 .trending-title {
     padding-top: 20px;
 }
 
-div .trending {
+aside h3 {
+    font-size: 1rem;
+}
+
+.trending-ul {
     display: grid;
-    grid-template-rows: repeat(4, 100px); 
+    grid-template-rows: repeat(4, 25%);
+    gap: 5px;
+    align-items: center;
+}
+
+.trending {
+    padding: 5px;
 }
 
 .trending-list {
     display: grid;
     grid-template-columns: 1fr 2fr;
     align-items: center;
-    margin-bottom: 20px;
+    justify-items: start;
+    margin: 10px 0;
+}
+
+.trending-list .material-symbols-outlined {
+    background: var(--theme-color);
+    height: 36px;
+    width: 36px;
+    text-align: center;
+    justify-self: center;
+    align-self: center;
+    border-radius: 25px;
+    font-size: 32px;
 }
 
 hr {
